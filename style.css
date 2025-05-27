@@ -15,7 +15,6 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-rows: 1fr 4fr;
-    border: 1px solid blue;
     background: var(--bg-color);
 }
 
@@ -25,19 +24,13 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    border: 1px solid orange;
-}
-
-nav > div {
-    border: 1px solid red;
+    border-bottom: 2px solid black;
 }
 
 main {
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
 }
 
 ul {
@@ -47,10 +40,20 @@ ul {
     gap: 1rem;
 }
 
+.content {
+    display: flex;
+    gap: 1rem;
+    width: 50%;
+    justify-content: center;
+}
+
 .pokemon-data {
-    border: 1px solid green;
+    border: 2px solid #000000;
+    flex-grow: 1;
 }
 
 img {
-    border: 1px solid purple;
+    border: 2px solid #000000;
+    flex-grow: 1;
+    border-radius: 50%;
 }
