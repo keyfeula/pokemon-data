@@ -10,7 +10,7 @@
         <nav>
             <div class="input-container">
                 <label for="pkmn-search">Type in a pokemon to search:</label>
-                <input type="search" name="pkmn" id="pkmn-search">
+                <input type="search" name="pkmn" id="pkmn-search" maxlength="25">
             </div>
             <div class="button-container">
                 <button type="button" id="search-btn">Search</button>
@@ -19,6 +19,16 @@
         <main>
             <div class="image-container">
                 <img src="" alt="pokemon-image">
+            </div>
+            <div class="pokemon-data">
+                <ul>
+                    <li id="name">Name: </li>
+                    <li id="pokedex-id">Pokedex Number: </li>
+                    <li id="type">Type: </li>
+                    <li id="height">Height:</li>
+                    <li id="weight">Weight:</li>
+                    <li id="abilities">Abilities:</li>
+                </ul>
             </div>
         </main>
     </body>
