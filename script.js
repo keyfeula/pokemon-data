@@ -7,19 +7,26 @@ const pkmnTypes = document.querySelector("#type span");
 const searchBar = document.getElementById("pkmn-search");
 const searchBtn = document.getElementById("search-btn");
 const dataSpans = document.querySelectorAll("ul li span");
+const errorMsg = document.querySelector(".error-message");
 
 
 fetchData("pikachu");
 
 searchBtn.addEventListener("click", () => {
-    dataSpans.forEach(span => span.textContent = "");
+    if (searchBar.value === "") {
+        errorMsg.textContent = "Enter a Pokemon name!";
+        return;
+    }
     fetchData(searchBar.value);
 });
 
 function fetchData(pokemonName) {
-    fetch("https://pokeapi.co/api/v2/pokemon/" + pokemonName, {mode: "cors"})
+    fetch("https://pokeapi.co/api/v2/pokemon/" + pokemonName.toLowerCase(), {mode: "cors"})
     .then(response => {
         if (!response.ok) {
+            if (response.status === 404) {
+                errorMsg.textContent = "404 Pokemon Not Found!";
+            }
             throw new Error("Error Code: " + response.status);
         }
         return response.json();
@@ -29,7 +36,8 @@ function fetchData(pokemonName) {
 }
 
 function showData(pkmnObject) {
-    console.log(pkmnObject);
+    dataSpans.forEach(span => span.textContent = "");
+    errorMsg.textContent = "";
     const name = pkmnObject.name;
     const id = pkmnObject.id;
     const imgSrc = pkmnObject.sprites.front_default;
@@ -51,5 +59,4 @@ function showData(pkmnObject) {
         }
     }
     pkmnTypes.textContent += ` ${typesString}`;
-
 }
