@@ -5,4 +5,4 @@ Simple program that fetches the pokemon data searched by the user using PokeAPI 
 How to use:
   Search pokemon by name or pokedex number (not case sensitive)
 
-[Live Demo]("https://keyfeula.github.io/pokemon-data/")
+[Live Demo](https://keyfeula.github.io/pokemon-data/)
