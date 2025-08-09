@@ -11,6 +11,7 @@ const errorMsg = document.querySelector(".error-message");
 
 
 fetchData("pikachu");
+searchBar.focus();
 
 searchBtn.addEventListener("click", () => {
     if (searchBar.value === "") {
